@@ -1,6 +1,6 @@
 #include "main.h"
 
-Mat img = imread("C:/imageArchive/ref1.bmp", 1);
+Mat img = imread("C:/imageArchive/ref1.bmp", 1); //Change it to the file you want to use as your ID photo.
 Mat face_detected_img;
 Mat small_rect_img;
 
@@ -30,16 +30,16 @@ void main() {
         Point tr3(faces[y].x + faces[y].width * 0.35, faces[y].y);
         rectangle(small_rect_img, lb3, tr3, Scalar(0, 0, 255), 3, 8, 0);*/
 
-       // 31~34 : ¸ö ÂÊ¿¡ Á÷¼± masking
+       // 31~34 : ëª¸ ìª½ì— ì§ì„  masking
 
-    } //input image cascade·Î rect ÀÖ´Â Mat face_detected_img »ı¼º && ÀÛÀº rect¸¦ °¡Áø small_rect_img »ı¼º
+    } //input image cascadeë¡œ rect ìˆëŠ” Mat face_detected_img ìƒì„± && ì‘ì€ rectë¥¼ ê°€ì§„ small_rect_img ìƒì„±
 
     namedWindow("Face", WINDOW_AUTOSIZE);
     setMouseCallback("Face", onMouse, nullptr);
 
     imshow("Face", face_detected_img);
     
-    // GUI¸¦ À¯Áö
+    // GUIë¥¼ ìœ ì§€
     waitKey(0);
 
 }
